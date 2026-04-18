@@ -228,6 +228,7 @@
             margin-bottom: 8px;
             background: linear-gradient(135deg, #60a5fa, #818cf8);
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
             animation: titleGlow 4.5s ease-in-out infinite;
         }
@@ -572,6 +573,132 @@
             padding: 8px 16px;
             background: var(--gray-100);
             border-radius: 50px;
+            position: relative;
+        }
+
+        .account-switcher {
+            position: relative;
+        }
+
+        .account-switch-btn {
+            background: none;
+            border: none;
+            color: var(--gray-500);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .account-switch-btn:hover {
+            background: var(--gray-200);
+            color: var(--dark-color);
+        }
+
+        .account-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            min-width: 250px;
+            z-index: 1000;
+            display: none;
+            border: 1px solid var(--gray-200);
+            margin-top: 8px;
+        }
+
+        .account-dropdown.active {
+            display: block;
+        }
+
+        .account-dropdown-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .account-dropdown-header span {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .btn-add-account {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-add-account:hover {
+            background: #6366f1;
+        }
+
+        .account-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .account-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--gray-50);
+        }
+
+        .account-item:hover {
+            background: var(--gray-50);
+        }
+
+        .account-item.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .account-item.active:hover {
+            background: #6366f1;
+        }
+
+        .account-item-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .account-item.active .account-item-avatar {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .account-item-details h5 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .account-item-details p {
+            margin: 2px 0 0 0;
+            font-size: 12px;
+            opacity: 0.7;
         }
 
         .user-avatar {
@@ -828,6 +955,127 @@
             min-height: 80px;
         }
 
+        /* ==================== PAYMENT UPLOAD STYLES ==================== */
+        .payment-upload-section {
+            margin-top: 8px;
+        }
+
+        .upload-area {
+            border: 2px dashed var(--gray-300);
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--gray-50);
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .upload-area.dragover {
+            border-color: var(--primary-color);
+            background: rgba(99, 102, 241, 0.1);
+            transform: scale(1.02);
+        }
+
+        .upload-content i {
+            font-size: 48px;
+            color: var(--gray-400);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .upload-content p {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .upload-hint {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .demo-section {
+            text-align: center;
+            margin: 16px 0;
+            padding: 16px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            border: 1px solid #0ea5e9;
+        }
+
+        .demo-section .btn {
+            margin-bottom: 8px;
+        }
+
+        .demo-section small {
+            display: block;
+            color: #0369a1;
+            font-weight: 500;
+        }
+
+        .image-preview {
+            position: relative;
+            margin-top: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--gray-200);
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .preview-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .preview-actions .btn {
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .processing-status {
+            margin-top: 16px;
+            padding: 20px;
+            text-align: center;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .processing-spinner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--primary-color);
+        }
+
+        .processing-spinner i {
+            font-size: 20px;
+        }
+
+        .processing-spinner span {
+            font-weight: 600;
+        }
+
         .category-select {
             position: relative;
         }
@@ -1050,6 +1298,8 @@
 
         .modal-body {
             padding: 25px;
+            max-height: 70vh;
+            overflow-y: auto;
         }
 
         .modal-footer {
@@ -1076,6 +1326,26 @@
 
             .user-name {
                 display: none;
+            }
+
+            .account-dropdown {
+                right: 0;
+                left: auto;
+                min-width: 200px;
+            }
+
+            .account-item {
+                padding: 10px 12px;
+            }
+
+            .account-item-avatar {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+
+            .account-item-details h5 {
+                font-size: 13px;
             }
 
             .dashboard-content {
@@ -1273,13 +1543,222 @@
         }
 
         .budget-alert {
-            background: var(--warning-color);
-            color: white;
             padding: 8px 12px;
             border-radius: 6px;
             font-size: 14px;
             margin-top: 8px;
             display: none;
+            font-weight: 500;
+        }
+
+        .budget-alert.info {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .budget-alert.warning {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .budget-alert.danger {
+            background: var(--danger-color);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* ==================== FAMILY MANAGEMENT STYLES ==================== */
+        .family-management {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .family-overview h4,
+        .family-budget-section h4,
+        .family-expenses-section h4 {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .family-member {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: var(--surface);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .member-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .member-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .member-details h5 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .member-details p {
+            margin: 4px 0 0 0;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .member-stats {
+            text-align: right;
+        }
+
+        .member-expenses {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .family-budget-breakdown {
+            margin-top: 16px;
+            padding: 16px;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .budget-breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .budget-breakdown-item.total {
+            border-top: 2px solid var(--border);
+            margin-top: 8px;
+            padding-top: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .no-expenses {
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .family-members-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .family-member-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .family-member-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .member-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .member-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .member-details h5 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .member-details p {
+            margin: 4px 0 0 0;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .member-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            text-align: right;
+        }
+
+        .member-stat {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+        }
+
+        .stat-value {
+            font-weight: 600;
+        }
+
+        .stat-value.income {
+            color: var(--success-color);
+        }
+
+        .stat-value.expense {
+            color: var(--danger-color);
+        }
+
+        .stat-value.balance.positive {
+            color: var(--success-color);
+        }
+
+        .stat-value.balance.negative {
+            color: var(--danger-color);
         }
 
         /* ==================== INSIGHTS STYLES ==================== */
@@ -1440,6 +1919,51 @@
             .income-actions {
                 margin-top: 0;
             }
+
+            .upload-area {
+                padding: 30px 15px;
+            }
+
+            .upload-content i {
+                font-size: 36px;
+            }
+
+            .upload-content p {
+                font-size: 14px;
+            }
+
+            .upload-hint {
+                font-size: 12px;
+            }
+
+            .demo-section {
+                margin: 12px 0;
+                padding: 12px;
+            }
+
+            .demo-section .btn {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+
+            .demo-section small {
+                font-size: 11px;
+            }
+
+            .image-preview img {
+                height: 150px;
+            }
+
+            .preview-actions {
+                padding: 8px;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .preview-actions .btn {
+                max-width: none;
+                width: 100%;
+            }
         }
 
         /* ==================== FAB (Floating Action Button) ==================== */
@@ -1471,6 +1995,21 @@
             .fab {
                 bottom: 16px;
                 right: 16px;
+            }
+
+            .family-member-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .member-stats {
+                width: 100%;
+                text-align: left;
+            }
+
+            .member-stat {
+                justify-content: flex-start;
             }
         }
     </style>
@@ -1607,6 +2146,22 @@
                 <div class="user-info">
                     <div class="user-avatar" id="userAvatar">U</div>
                     <span class="user-name" id="displayUsername">User</span>
+                    <div class="account-switcher">
+                        <button class="account-switch-btn" onclick="toggleAccountSwitcher()">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <div class="account-dropdown-header">
+                                <span>Switch Account</span>
+                                <button class="btn-add-account" onclick="showRegisterPage()">
+                                    <i class="fas fa-plus"></i> Add Account
+                                </button>
+                            </div>
+                            <div id="accountList" class="account-list">
+                                <!-- Accounts will be populated here -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <button class="btn-logout" onclick="logout()">
                     <i class="fas fa-sign-out-alt"></i>
@@ -1624,6 +2179,12 @@
                     <button class="btn btn-secondary btn-sm" onclick="toggleDarkMode()">
                         <i class="fas fa-moon"></i> Dark Mode
                     </button>
+                    <button class="btn btn-secondary btn-sm" onclick="showFamilyOverview()">
+                        <i class="fas fa-users"></i> Family Overview
+                    </button>
+                    <button class="btn btn-secondary btn-sm" onclick="openFamilyModal()">
+                        <i class="fas fa-users-cog"></i> Family Settings
+                    </button>
                     <button class="btn btn-secondary btn-sm" onclick="exportData()">
                         <i class="fas fa-download"></i> Export
                     </button>
@@ -1633,7 +2194,6 @@
                 </div>
             </div>
 
-            <!-- Smart Insights -->
             <div class="insights-card">
                 <h3 style="margin-bottom: 16px; font-size: 18px;"><i class="fas fa-lightbulb"></i> Smart Insights</h3>
                 <div id="insightsContainer">
@@ -1799,6 +2359,52 @@
                             <div class="form-group">
                                 <label for="expenseDescription">Description</label>
                                 <textarea id="expenseDescription" placeholder="Add a note about this expense..." rows="3"></textarea>
+                            </div>
+
+                            <!-- Payment Screenshot Upload -->
+                            <div class="form-group">
+                                <label>Payment Screenshot (Optional)</label>
+                                <div class="payment-info">
+                                    <small style="color: var(--gray-500); display: block; margin-bottom: 8px;">
+                                        <i class="fas fa-info-circle"></i> Upload a screenshot of your payment receipt and our AI will help categorize it automatically!
+                                    </small>
+                                    <button type="button" class="btn btn-secondary btn-sm" onclick="demoPaymentProcessing()" style="margin-bottom: 12px;">
+                                        <i class="fas fa-magic"></i> Try Demo Processing
+                                    </button>
+                                </div>
+                                <div class="payment-upload-section">
+                                    <div class="upload-area" id="uploadArea">
+                                        <div class="upload-content">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <p>Click to upload payment screenshot</p>
+                                            <span class="upload-hint">or drag and drop image here</span>
+                                        </div>
+                                        <input type="file" id="paymentImage" accept="image/*" style="display: none;">
+                                    </div>
+                                    <div class="demo-section">
+                                        <button type="button" class="btn btn-info btn-sm" onclick="demoPaymentProcessing()">
+                                            <i class="fas fa-magic"></i> Try Demo Processing
+                                        </button>
+                                        <small class="text-muted">See how AI processes a payment screenshot</small>
+                                    </div>
+                                    <div class="image-preview" id="imagePreview" style="display: none;">
+                                        <img id="previewImg" src="" alt="Payment screenshot">
+                                        <div class="preview-actions">
+                                            <button type="button" class="btn btn-success btn-sm" onclick="processPaymentImage()">
+                                                <i class="fas fa-brain"></i> Process Payment
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="removePaymentImage()">
+                                                <i class="fas fa-trash"></i> Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="processing-status" id="processingStatus" style="display: none;">
+                                        <div class="processing-spinner">
+                                            <i class="fas fa-spinner fa-spin"></i>
+                                            <span>Analyzing payment...</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
                             <input type="hidden" id="editExpenseId">
@@ -2133,6 +2739,80 @@
         </div>
     </div>
 
+    <!-- Family Management Modal -->
+    <div class="modal-overlay" id="familyModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-users"></i> Family Expense Management</h3>
+                <button class="modal-close" onclick="closeFamilyModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="family-management">
+                    <div class="family-overview">
+                        <h4>Family Members</h4>
+                        <div id="familyMembersList">
+                            <div class="family-member">
+                                <div class="member-info">
+                                    <div class="member-avatar">👤</div>
+                                    <div class="member-details">
+                                        <h5>You (Primary)</h5>
+                                        <p>Main account holder</p>
+                                    </div>
+                                </div>
+                                <div class="member-stats">
+                                    <span class="member-expenses">₹0.00 this month</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="addFamilyMember()" style="margin-top: 16px;">
+                            <i class="fas fa-plus"></i> Add Family Member
+                        </button>
+                    </div>
+
+                    <div class="family-budget-section">
+                        <h4>Family Budget Allocation</h4>
+                        <div class="form-group">
+                            <label for="familyMonthlyBudget">Total Family Monthly Budget (₹)</label>
+                            <input type="number" id="familyMonthlyBudget" placeholder="50000" min="0" step="500">
+                        </div>
+                        <div class="family-budget-breakdown">
+                            <div class="budget-breakdown-item">
+                                <span>Individual Budgets</span>
+                                <span id="individualBudgetsTotal">₹0.00</span>
+                            </div>
+                            <div class="budget-breakdown-item">
+                                <span>Shared Expenses</span>
+                                <span id="sharedExpensesTotal">₹0.00</span>
+                            </div>
+                            <div class="budget-breakdown-item total">
+                                <span>Total Allocated</span>
+                                <span id="totalAllocated">₹0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="family-expenses-section">
+                        <h4>Shared Family Expenses</h4>
+                        <div id="sharedExpensesList">
+                            <p class="no-expenses">No shared expenses yet. Add some to track family spending.</p>
+                        </div>
+                        <button class="btn btn-success btn-sm" onclick="addSharedExpense()" style="margin-top: 16px;">
+                            <i class="fas fa-plus"></i> Add Shared Expense
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeFamilyModal()">Close</button>
+                <button class="btn btn-success" onclick="saveFamilySettings()">
+                    <i class="fas fa-save"></i> Save Family Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating Action Button -->
     <button class="fab" onclick="showPage('dashboardPage'); document.getElementById('expenseAmount').focus();">
         <i class="fas fa-plus"></i>
@@ -2144,6 +2824,10 @@
         let expenses = [];
         let incomes = [];
         let budgets = {};
+        let categoryChart = null;
+        let monthlyChart = null;
+        let trendChart = null;
+        let incomeExpenseChart = null;
         const backendEnabled = window.location.protocol.startsWith('http');
 
         async function apiRequest(path, options = {}) {
@@ -2328,6 +3012,11 @@
         }
 
         function renderCharts() {
+            if (typeof Chart === 'undefined') {
+                console.warn('Chart.js library not loaded yet');
+                return;
+            }
+
             const categoryTotals = {};
             const monthlyTotals = {};
             const dailyTotals = {};
@@ -2357,8 +3046,25 @@
             const trendCanvas = document.getElementById('trendChart');
             const incomeExpenseCanvas = document.getElementById('incomeExpenseChart');
 
+            if (categoryChart) {
+                categoryChart.destroy();
+                categoryChart = null;
+            }
+            if (monthlyChart) {
+                monthlyChart.destroy();
+                monthlyChart = null;
+            }
+            if (trendChart) {
+                trendChart.destroy();
+                trendChart = null;
+            }
+            if (incomeExpenseChart) {
+                incomeExpenseChart.destroy();
+                incomeExpenseChart = null;
+            }
+
             if (categoryCanvas) {
-                const categoryChart = new Chart(categoryCanvas, {
+                categoryChart = new Chart(categoryCanvas, {
                     type: 'pie',
                     data: {
                         labels: Object.keys(categoryTotals),
@@ -2376,7 +3082,7 @@
             }
 
             if (monthlyCanvas) {
-                const monthlyChart = new Chart(monthlyCanvas, {
+                monthlyChart = new Chart(monthlyCanvas, {
                     type: 'bar',
                     data: {
                         labels: Object.keys(monthlyTotals),
@@ -2398,7 +3104,7 @@
 
             if (trendCanvas) {
                 const sortedDays = Object.keys(dailyTotals).sort((a, b) => new Date(a) - new Date(b));
-                const trendChart = new Chart(trendCanvas, {
+                trendChart = new Chart(trendCanvas, {
                     type: 'line',
                     data: {
                         labels: sortedDays,
@@ -2421,7 +3127,7 @@
 
             if (incomeExpenseCanvas) {
                 const months = Object.keys(incomeVsExpense).sort();
-                const incomeExpenseChart = new Chart(incomeExpenseCanvas, {
+                incomeExpenseChart = new Chart(incomeExpenseCanvas, {
                     type: 'bar',
                     data: {
                         labels: months,
@@ -2441,94 +3147,6 @@
                     }
                 });
             }
-        }
-
-        // ==================== UTILITY FUNCTIONS ====================
-        function showPage(pageId) {
-            document.querySelectorAll('.auth-container, .dashboard-container').forEach(page => {
-                page.classList.add('hidden');
-            });
-            document.getElementById(pageId).classList.remove('hidden');
-            
-            // Clear forms and messages
-            document.querySelectorAll('.error-message, .success-message').forEach(msg => {
-                msg.classList.add('hidden');
-            });
-            document.querySelectorAll('form').forEach(form => form.reset());
-        }
-
-        function togglePassword(inputId, button) {
-            const input = document.getElementById(inputId);
-            const icon = button.querySelector('i');
-            
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                input.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        }
-
-        function showToast(message, type = 'success') {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            toast.innerHTML = `
-                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'}"></i>
-                ${message}
-            `;
-            container.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.classList.add('removing');
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
-        }
-
-        function formatCurrency(amount) {
-    return "₹" + parseFloat(amount).toLocaleString('en-IN', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-}
-
-        function formatDate(dateString) {
-            return new Date(dateString).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-            });
-        }
-
-        function getCategoryIcon(category) {
-            const icons = {
-                food: 'fa-utensils',
-                travel: 'fa-plane',
-                bills: 'fa-file-invoice-dollar',
-                shopping: 'fa-shopping-cart',
-                entertainment: 'fa-film',
-                health: 'fa-heartbeat',
-                education: 'fa-graduation-cap',
-                other: 'fa-box'
-            };
-            return icons[category] || 'fa-box';
-        }
-
-        function getCategoryName(category) {
-            const names = {
-                food: 'Food & Dining',
-                travel: 'Travel & Transport',
-                bills: 'Bills & Utilities',
-                shopping: 'Shopping',
-                entertainment: 'Entertainment',
-                health: 'Health & Medical',
-                education: 'Education',
-                other: 'Other'
-            };
-            return names[category] || 'Other';
         }
 
         // ==================== LOCAL STORAGE FUNCTIONS ====================
@@ -2629,14 +3247,204 @@
             showToast('You have been logged out', 'success');
         }
 
+        // ==================== ACCOUNT SWITCHING FUNCTIONS ====================
+        function toggleAccountSwitcher() {
+            const dropdown = document.getElementById('accountDropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function renderAccountList() {
+            const accountList = document.getElementById('accountList');
+            const users = getUsers();
+            
+            accountList.innerHTML = users.map(user => `
+                <div class="account-item ${user.username === currentUser ? 'active' : ''}" 
+                     onclick="switchToAccount('${user.username}')">
+                    <div class="account-item-avatar">${user.username.charAt(0).toUpperCase()}</div>
+                    <div class="account-item-details">
+                        <h5>${user.username}</h5>
+                        <p>${user.username === currentUser ? 'Current Account' : 'Click to switch'}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function switchToAccount(username) {
+            if (username === currentUser) {
+                showToast('Already using this account', 'info');
+                return;
+            }
+
+            // Save current session data
+            if (currentUser) {
+                saveUserExpenses(currentUser, expenses);
+                saveUserIncomes(currentUser, incomes);
+                saveUserBudgets(currentUser, budgets);
+            }
+
+            // Switch to new account
+            currentUser = username;
+            setCurrentSession(currentUser);
+            
+            // Load new account data
+            expenses = getUserExpenses(currentUser);
+            incomes = getUserIncomes(currentUser);
+            budgets = getUserBudgets(currentUser);
+            
+            // Update UI
+            updateUserDisplay();
+            renderExpenses();
+            renderIncomes();
+            updateStats();
+            renderCharts();
+            updateBudgetUI();
+            generateInsights();
+            
+            // Close dropdown
+            document.getElementById('accountDropdown').classList.remove('active');
+            
+            showToast(`Switched to ${username}'s account`, 'success');
+        }
+
+        function updateUserDisplay() {
+            document.getElementById('displayUsername').textContent = currentUser;
+            document.getElementById('welcomeUsername').textContent = currentUser;
+            document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
+        }
+
+        function showRegisterPage() {
+            document.getElementById('accountDropdown').classList.remove('active');
+            showPage('registerPage');
+        }
+
+        function showFamilyOverview() {
+            const users = getUsers();
+            let totalFamilyExpenses = 0;
+            let totalFamilyIncome = 0;
+            let familyMembers = [];
+            
+            users.forEach(user => {
+                const userExpenses = getUserExpenses(user.username);
+                const userIncomes = getUserIncomes(user.username);
+                const userTotalExpenses = userExpenses.reduce((sum, e) => sum + parseFloat(e.amount), 0);
+                const userTotalIncome = userIncomes.reduce((sum, i) => sum + parseFloat(i.amount), 0);
+                
+                totalFamilyExpenses += userTotalExpenses;
+                totalFamilyIncome += userTotalIncome;
+                
+                familyMembers.push({
+                    name: user.username,
+                    expenses: userTotalExpenses,
+                    income: userTotalIncome,
+                    balance: userTotalIncome - userTotalExpenses
+                });
+            });
+            
+            const familyBalance = totalFamilyIncome - totalFamilyExpenses;
+            
+            // Create family overview modal
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay active';
+            modal.id = 'familyOverviewModal';
+            modal.innerHTML = `
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3><i class="fas fa-users"></i> Family Overview</h3>
+                        <button class="modal-close" onclick="closeFamilyOverviewModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="family-overview-stats">
+                            <div class="stat-card" style="margin-bottom: 20px;">
+                                <div class="stat-icon" style="background: #16a34a;">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>${formatCurrency(totalFamilyIncome)}</h3>
+                                    <p>Total Family Income</p>
+                                </div>
+                            </div>
+                            <div class="stat-card" style="margin-bottom: 20px;">
+                                <div class="stat-icon" style="background: #dc2626;">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>${formatCurrency(totalFamilyExpenses)}</h3>
+                                    <p>Total Family Expenses</p>
+                                </div>
+                            </div>
+                            <div class="stat-card" style="margin-bottom: 20px;">
+                                <div class="stat-icon" style="background: ${familyBalance >= 0 ? '#16a34a' : '#dc2626'};">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>${formatCurrency(familyBalance)}</h3>
+                                    <p>Family Balance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 30px 0 16px 0; color: var(--text-primary);">Individual Member Summary</h4>
+                        <div class="family-members-summary">
+                            ${familyMembers.map(member => `
+                                <div class="family-member-card">
+                                    <div class="member-info">
+                                        <div class="member-avatar">${member.name.charAt(0).toUpperCase()}</div>
+                                        <div class="member-details">
+                                            <h5>${member.name}</h5>
+                                            <p>${member.name === currentUser ? 'Current Account' : 'Family Member'}</p>
+                                        </div>
+                                    </div>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <span class="stat-label">Income:</span>
+                                            <span class="stat-value income">${formatCurrency(member.income)}</span>
+                                        </div>
+                                        <div class="member-stat">
+                                            <span class="stat-label">Expenses:</span>
+                                            <span class="stat-value expense">${formatCurrency(member.expenses)}</span>
+                                        </div>
+                                        <div class="member-stat">
+                                            <span class="stat-label">Balance:</span>
+                                            <span class="stat-value balance ${member.balance >= 0 ? 'positive' : 'negative'}">${formatCurrency(member.balance)}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="closeFamilyOverviewModal()">Close</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+
+        function closeFamilyOverviewModal() {
+            const modal = document.getElementById('familyOverviewModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
         // ==================== EXPENSE FUNCTIONS ====================
         function getFilteredExpenses() {
-            const categoryFilter = document.getElementById('filterCategory').value;
-            const dateFrom = document.getElementById('filterDateFrom').value;
-            const dateTo = document.getElementById('filterDateTo').value;
-            const minAmount = parseFloat(document.getElementById('filterMinAmount').value) || 0;
-            const maxAmount = parseFloat(document.getElementById('filterMaxAmount').value) || Infinity;
-            const searchText = document.getElementById('searchDescription').value.toLowerCase();
+            const categoryEl = document.getElementById('filterCategory');
+            const dateFromEl = document.getElementById('filterDateFrom');
+            const dateToEl = document.getElementById('filterDateTo');
+            const minAmountEl = document.getElementById('filterMinAmount');
+            const maxAmountEl = document.getElementById('filterMaxAmount');
+            const searchEl = document.getElementById('searchDescription');
+
+            const categoryFilter = categoryEl ? categoryEl.value : '';
+            const dateFrom = dateFromEl ? dateFromEl.value : '';
+            const dateTo = dateToEl ? dateToEl.value : '';
+            const minAmount = minAmountEl ? parseFloat(minAmountEl.value) || 0 : 0;
+            const maxAmount = maxAmountEl ? parseFloat(maxAmountEl.value) || Infinity : Infinity;
+            const searchText = searchEl ? searchEl.value.toLowerCase() : '';
             
             return expenses.filter(expense => {
                 const matchesCategory = !categoryFilter || expense.category === categoryFilter;
@@ -2644,7 +3452,7 @@
                 const matchesDateFrom = !dateFrom || expenseDate >= new Date(dateFrom);
                 const matchesDateTo = !dateTo || expenseDate <= new Date(dateTo + 'T23:59:59');
                 const matchesAmount = parseFloat(expense.amount) >= minAmount && parseFloat(expense.amount) <= maxAmount;
-                const matchesSearch = !searchText || expense.description.toLowerCase().includes(searchText);
+                const matchesSearch = !searchText || (expense.description && expense.description.toLowerCase().includes(searchText));
                 return matchesCategory && matchesDateFrom && matchesDateTo && matchesAmount && matchesSearch;
             });
         }
@@ -2837,51 +3645,150 @@
             showToast('Expense deleted successfully!', 'success');
         }
 
-        function openEditIncomeModal(id) {
-            const income = incomes.find(i => i.id === id);
-            if (!income) return;
-
-            document.getElementById('editIncomeId').value = income.id;
-            document.getElementById('editIncomeAmount').value = income.amount;
-            document.getElementById('editIncomeSource').value = income.source;
-            document.getElementById('editIncomeDate').value = income.date;
-            document.getElementById('editIncomeDescription').value = income.description || '';
-
-            document.getElementById('editIncomeModal').classList.add('active');
+        // ==================== MISSING UTILITY FUNCTIONS ====================
+        
+        /**
+         * Display a toast notification
+         * @param {string} message - The message to display
+         * @param {string} type - The type of notification (success, error, warning, info)
+         * @param {number} duration - Duration in milliseconds (default: 3000)
+         */
+        function showToast(message, type = 'info', duration = 3000) {
+            const container = document.querySelector('.toast-container') || createToastContainer();
+            
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-${
+                    type === 'success' ? 'check-circle' :
+                    type === 'error' ? 'exclamation-circle' :
+                    type === 'warning' ? 'exclamation-triangle' :
+                    'info-circle'
+                }"></i>
+                <span>${message}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('removing');
+                setTimeout(() => {
+                    toast.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 300);
+            }, duration);
         }
 
-        function closeIncomeModal() {
-            document.getElementById('editIncomeModal').classList.remove('active');
+        function createToastContainer() {
+            const container = document.createElement('div');
+            container.className = 'toast-container';
+            document.body.appendChild(container);
+            return container;
         }
 
-        function saveIncomeEdit() {
-            const id = document.getElementById('editIncomeId').value;
-            const updatedIncome = {
-                amount: parseFloat(document.getElementById('editIncomeAmount').value),
-                source: document.getElementById('editIncomeSource').value,
-                date: document.getElementById('editIncomeDate').value,
-                description: document.getElementById('editIncomeDescription').value
+        /**
+         * Show/hide page sections
+         * @param {string} pageId - The ID of the page to show
+         */
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('[id$="Page"]').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show the selected page
+            const page = document.getElementById(pageId);
+            if (page) {
+                page.classList.remove('hidden');
+                page.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        /**
+         * Format number as currency
+         * @param {number} amount - The amount to format
+         * @param {string} currency - The currency code (default: USD)
+         * @returns {string} The formatted currency string
+         */
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(amount);
+        }
+
+        /**
+         * Format date to readable string
+         * @param {string|Date} date - The date to format
+         * @returns {string} The formatted date string
+         */
+        function formatDate(date) {
+            const dateObj = new Date(date);
+            return dateObj.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+        }
+
+        /**
+         * Get Font Awesome icon class for expense category
+         * @param {string} category - The expense category
+         * @returns {string} The Font Awesome icon class
+         */
+        function getCategoryIcon(category) {
+            const icons = {
+                'food': 'fa-utensils',
+                'travel': 'fa-car',
+                'shopping': 'fa-shopping-bag',
+                'entertainment': 'fa-film',
+                'bills': 'fa-file-invoice-dollar',
+                'health': 'fa-heartbeat',
+                'education': 'fa-graduation-cap',
+                'other': 'fa-receipt'
             };
-
-            updateIncome(id, updatedIncome);
-            closeIncomeModal();
-            showToast('Income updated successfully!', 'success');
+            return icons[category] || 'fa-receipt';
         }
 
-        function openDeleteIncomeModal(id) {
-            document.getElementById('deleteIncomeId').value = id;
-            document.getElementById('deleteIncomeModal').classList.add('active');
+        /**
+         * Get readable category name
+         * @param {string} category - The category key
+         * @returns {string} The readable category name
+         */
+        function getCategoryName(category) {
+            const names = {
+                'food': 'Food & Dining',
+                'travel': 'Travel',
+                'shopping': 'Shopping',
+                'entertainment': 'Entertainment',
+                'bills': 'Bills & Utilities',
+                'health': 'Health & Medical',
+                'education': 'Education',
+                'other': 'Other'
+            };
+            return names[category] || category.charAt(0).toUpperCase() + category.slice(1);
         }
 
-        function closeDeleteIncomeModal() {
-            document.getElementById('deleteIncomeModal').classList.remove('active');
-        }
-
-        function confirmDeleteIncome() {
-            const id = document.getElementById('deleteIncomeId').value;
-            deleteIncome(id);
-            closeDeleteIncomeModal();
-            showToast('Income deleted successfully!', 'success');
+        /**
+         * Toggle password visibility
+         * @param {string} inputId - The ID of the password input
+         * @param {HTMLElement} button - The toggle button element
+         */
+        function togglePassword(inputId, button) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                input.type = 'password';
+                button.innerHTML = '<i class="fas fa-eye"></i>';
+            }
         }
 
         // ==================== EVENT LISTENERS ====================
@@ -2901,148 +3808,226 @@
                 loadIncomes();
                 loadBudgets();
                 showPage('dashboardPage');
+                renderAccountList();
             }
 
             // Login form
-            document.getElementById('loginForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const username = document.getElementById('loginUsername').value.trim();
-                const password = document.getElementById('loginPassword').value;
+            const loginFormEl = document.getElementById('loginForm');
+            if (loginFormEl) {
+                loginFormEl.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const username = document.getElementById('loginUsername').value.trim();
+                    const password = document.getElementById('loginPassword').value;
 
-                if (!username || !password) {
-                    document.getElementById('loginError').classList.remove('hidden');
-                    document.getElementById('loginErrorText').textContent = 'Please fill in all fields';
-                    return;
-                }
+                    if (!username || !password) {
+                        document.getElementById('loginError').classList.remove('hidden');
+                        document.getElementById('loginErrorText').textContent = 'Please fill in all fields';
+                        return;
+                    }
 
-                try {
-                    const user = backendEnabled ? await loginBackend(username, password) : loginLocal(username, password);
-                    if (!user) throw new Error('Invalid username or password');
+                    try {
+                        const user = backendEnabled ? await loginBackend(username, password) : login(username, password);
+                        if (!user) throw new Error('Invalid username or password');
 
-                    currentUser = username;
-                    setCurrentSession(currentUser);
-                    document.getElementById('displayUsername').textContent = currentUser;
-                    document.getElementById('welcomeUsername').textContent = currentUser;
-                    document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
-                    await loadExpenses();
-                    await loadIncomes();
-                    loadBudgets();
-                    triggerLoginSuccessAnimation();
-                    setTimeout(() => {
-                        document.getElementById('loginSuccessOverlay').classList.add('hidden');
-                        showPage('dashboardPage');
-                        showToast(`Welcome back, ${currentUser}!`, 'success');
-                    }, 900);
-                } catch (error) {
-                    document.getElementById('loginError').classList.remove('hidden');
-                    document.getElementById('loginErrorText').textContent = error.message;
-                }
-            });
+                        currentUser = username;
+                        setCurrentSession(currentUser);
+                        document.getElementById('displayUsername').textContent = currentUser;
+                        document.getElementById('welcomeUsername').textContent = currentUser;
+                        document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
+                        
+                        try {
+                            await loadExpenses();
+                        } catch (err) {
+                            console.error('Error loading expenses:', err);
+                        }
+                        
+                        try {
+                            await loadIncomes();
+                        } catch (err) {
+                            console.error('Error loading incomes:', err);
+                        }
+                        
+                        try {
+                            loadBudgets();
+                        } catch (err) {
+                            console.error('Error loading budgets:', err);
+                        }
+                        
+                        triggerLoginSuccessAnimation();
+                        setTimeout(() => {
+                            document.getElementById('loginSuccessOverlay').classList.add('hidden');
+                            showPage('dashboardPage');
+                            renderAccountList();
+                            showToast(`Welcome back, ${currentUser}!`, 'success');
+                        }, 900);
+                    } catch (error) {
+                        document.getElementById('loginError').classList.remove('hidden');
+                        document.getElementById('loginErrorText').textContent = error.message;
+                    }
+                });
+            }
 
             // Register form
-            document.getElementById('registerForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const username = document.getElementById('registerUsername').value.trim();
-                const password = document.getElementById('registerPassword').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
+            const registerFormEl = document.getElementById('registerForm');
+            if (registerFormEl) {
+                registerFormEl.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const username = document.getElementById('registerUsername').value.trim();
+                    const password = document.getElementById('registerPassword').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
 
-                const error = validateRegistration(username, password, confirmPassword);
-                
-                if (error) {
-                    document.getElementById('registerError').classList.remove('hidden');
-                    document.getElementById('registerErrorText').textContent = error;
-                    document.getElementById('registerSuccess').classList.add('hidden');
-                    return;
-                }
-
-                try {
-                    if (backendEnabled) {
-                        await registerBackend(username, password);
-                    } else {
-                        registerLocal(username, password);
+                    const error = validateRegistration(username, password, confirmPassword);
+                    
+                    if (error) {
+                        document.getElementById('registerError').classList.remove('hidden');
+                        document.getElementById('registerErrorText').textContent = error;
+                        document.getElementById('registerSuccess').classList.add('hidden');
+                        return;
                     }
-                    document.getElementById('registerError').classList.add('hidden');
-                    document.getElementById('registerSuccess').classList.remove('hidden');
-                    setTimeout(() => {
-                        showPage('loginPage');
-                        showToast('Account created! Please login.', 'success');
-                    }, 1400);
-                } catch (error) {
-                    document.getElementById('registerError').classList.remove('hidden');
-                    document.getElementById('registerErrorText').textContent = error.message;
-                    document.getElementById('registerSuccess').classList.add('hidden');
-                }
-            });
+
+                    try {
+                        if (backendEnabled) {
+                            await registerBackend(username, password);
+                        } else {
+                            register(username, password);
+                        }
+                        document.getElementById('registerError').classList.add('hidden');
+                        document.getElementById('registerSuccess').classList.remove('hidden');
+                        setTimeout(() => {
+                            showPage('loginPage');
+                            showToast('Account created! Please login.', 'success');
+                        }, 1400);
+                    } catch (error) {
+                        document.getElementById('registerError').classList.remove('hidden');
+                        document.getElementById('registerErrorText').textContent = error.message;
+                        document.getElementById('registerSuccess').classList.add('hidden');
+                    }
+                });
+            }
+
 
             // Expense form
-            document.getElementById('expenseForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const amount = parseFloat(document.getElementById('expenseAmount').value);
-                const category = document.getElementById('expenseCategory').value;
-                const paymentMethod = document.getElementById('expensePaymentMethod').value;
-                const date = document.getElementById('expenseDate').value;
-                const description = document.getElementById('expenseDescription').value.trim();
+            const expenseFormEl = document.getElementById('expenseForm');
+            if (expenseFormEl) {
+                expenseFormEl.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const amount = parseFloat(document.getElementById('expenseAmount').value);
+                    const category = document.getElementById('expenseCategory').value;
+                    const paymentMethod = document.getElementById('expensePaymentMethod').value;
+                    const date = document.getElementById('expenseDate').value;
+                    const description = document.getElementById('expenseDescription').value.trim();
 
-                if (!amount || !category || !paymentMethod || !date) {
-                    showToast('Please fill in all required fields', 'error');
-                    return;
-                }
+                    if (!amount || !category || !paymentMethod || !date) {
+                        showToast('Please fill in all required fields', 'error');
+                        return;
+                    }
 
-                try {
-                    await addExpense({
-                        amount,
-                        category,
-                        paymentMethod,
-                        date,
-                        description
-                    });
-                    this.reset();
-                    document.getElementById('expenseDate').valueAsDate = new Date();
-                    showToast('Expense added successfully!', 'success');
-                } catch (error) {
-                    showToast(error.message || 'Unable to save expense', 'error');
-                }
-            });
+                    try {
+                        await addExpense({
+                            amount,
+                            category,
+                            paymentMethod,
+                            date,
+                            description
+                        });
+                        this.reset();
+                        document.getElementById('expenseDate').valueAsDate = new Date();
+                        showToast('Expense added successfully!', 'success');
+                    } catch (error) {
+                        showToast(error.message || 'Unable to save expense', 'error');
+                    }
+                });
+            }
+
+            // ==================== PAYMENT UPLOAD FUNCTIONALITY ====================
+            const uploadArea = document.getElementById('uploadArea');
+            const paymentImageInput = document.getElementById('paymentImage');
+            const imagePreview = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+            const processingStatus = document.getElementById('processingStatus');
+
+            // Upload area click handler
+            if (uploadArea) {
+                uploadArea.addEventListener('click', () => {
+                    paymentImageInput.click();
+                });
+            }
+
+            // File input change handler
+            if (paymentImageInput) {
+                paymentImageInput.addEventListener('change', handleFileSelect);
+            }
+
+            // Drag and drop handlers
+            if (uploadArea) {
+                uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.add('dragover');
+                });
+
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.classList.remove('dragover');
+                });
+
+                uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('dragover');
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        handleFile(files[0]);
+                    }
+                });
+            }
 
             // Income form
-            document.getElementById('incomeForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const amount = parseFloat(document.getElementById('incomeAmount').value);
-                const source = document.getElementById('incomeSource').value.trim();
-                const date = document.getElementById('incomeDate').value;
-                const description = document.getElementById('incomeDescription').value.trim();
+            const incomeFormEl = document.getElementById('incomeForm');
+            if (incomeFormEl) {
+                incomeFormEl.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const amount = parseFloat(document.getElementById('incomeAmount').value);
+                    const source = document.getElementById('incomeSource').value.trim();
+                    const date = document.getElementById('incomeDate').value;
+                    const description = document.getElementById('incomeDescription').value.trim();
 
-                if (!amount || !source || !date) {
-                    showToast('Please fill in all required fields', 'error');
-                    return;
-                }
+                    if (!amount || !source || !date) {
+                        showToast('Please fill in all required fields', 'error');
+                        return;
+                    }
 
-                try {
-                    await addIncome({
-                        amount,
-                        source,
-                        date,
-                        description
-                    });
-                    this.reset();
-                    document.getElementById('incomeDate').valueAsDate = new Date();
-                    showToast('Income added successfully!', 'success');
-                } catch (error) {
-                    showToast(error.message || 'Unable to save income', 'error');
-                }
-            });
+                    try {
+                        await addIncome({
+                            amount,
+                            source,
+                            date,
+                            description
+                        });
+                        this.reset();
+                        document.getElementById('incomeDate').valueAsDate = new Date();
+                        showToast('Income added successfully!', 'success');
+                    } catch (error) {
+                        showToast(error.message || 'Unable to save income', 'error');
+                    }
+                });
+            }
 
             // Filter listeners
-            document.getElementById('filterCategory').addEventListener('change', renderExpenses);
-            document.getElementById('filterDateFrom').addEventListener('change', renderExpenses);
-            document.getElementById('filterDateTo').addEventListener('change', renderExpenses);
-            document.getElementById('filterMinAmount').addEventListener('input', renderExpenses);
-            document.getElementById('filterMaxAmount').addEventListener('input', renderExpenses);
-            document.getElementById('searchDescription').addEventListener('input', renderExpenses);
+            const filterCategory = document.getElementById('filterCategory');
+            const filterDateFrom = document.getElementById('filterDateFrom');
+            const filterDateTo = document.getElementById('filterDateTo');
+            const filterMinAmount = document.getElementById('filterMinAmount');
+            const filterMaxAmount = document.getElementById('filterMaxAmount');
+            const searchDescription = document.getElementById('searchDescription');
+
+            if (filterCategory) filterCategory.addEventListener('change', renderExpenses);
+            if (filterDateFrom) filterDateFrom.addEventListener('change', renderExpenses);
+            if (filterDateTo) filterDateTo.addEventListener('change', renderExpenses);
+            if (filterMinAmount) filterMinAmount.addEventListener('input', renderExpenses);
+            if (filterMaxAmount) filterMaxAmount.addEventListener('input', renderExpenses);
+            if (searchDescription) searchDescription.addEventListener('input', renderExpenses);
 
             // Generate insights on page load
             generateInsights();
@@ -3056,12 +4041,23 @@
                 });
             });
 
+            // Close account dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                const dropdown = document.getElementById('accountDropdown');
+                const switcher = document.querySelector('.account-switcher');
+                if (dropdown && switcher && !switcher.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+
             // Keyboard shortcut to close modals
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     document.querySelectorAll('.modal-overlay.active').forEach(modal => {
                         modal.classList.remove('active');
                     });
+                    // Also close account dropdown
+                    document.getElementById('accountDropdown').classList.remove('active');
                 }
             });
         });
@@ -3195,7 +4191,7 @@
             const now = new Date();
             const thisMonthExpenses = expenses.filter(e => {
                 const expenseDate = new Date(e.date);
-                return expenseDate.getMonth() === now.getMonth() && 
+                return expenseDate.getMonth() === now.getMonth() &&
                        expenseDate.getFullYear() === now.getFullYear();
             }).reduce((sum, e) => sum + parseFloat(e.amount), 0);
 
@@ -3208,17 +4204,45 @@
                 progressElement.style.width = percentage + '%';
                 progressElement.classList.toggle('budget-over', percentage >= 100);
                 textElement.textContent = `₹${thisMonthExpenses.toLocaleString()} / ₹${monthlyBudget.toLocaleString()}`;
-                
-                if (percentage >= 90) {
-                    alertElement.textContent = percentage >= 100 ? 'Budget exceeded!' : 'Approaching budget limit!';
+
+                // Enhanced budget alerts with notifications
+                if (percentage >= 100) {
+                    alertElement.textContent = '🚨 Budget exceeded! Consider reviewing your expenses.';
                     alertElement.style.display = 'block';
+                    alertElement.className = 'budget-alert danger';
+                    // Show persistent warning toast
+                    if (!localStorage.getItem('budgetExceededNotified')) {
+                        showToast('🚨 Budget exceeded! You have spent more than your monthly limit.', 'error', 8000);
+                        localStorage.setItem('budgetExceededNotified', 'true');
+                    }
+                } else if (percentage >= 90) {
+                    alertElement.textContent = '⚠️ Approaching budget limit! You\'re at ' + percentage.toFixed(0) + '% of your budget.';
+                    alertElement.style.display = 'block';
+                    alertElement.className = 'budget-alert warning';
+                    // Show warning toast
+                    if (!localStorage.getItem('budgetWarningNotified')) {
+                        showToast('⚠️ You\'re approaching your budget limit! Consider reducing expenses.', 'warning', 6000);
+                        localStorage.setItem('budgetWarningNotified', 'true');
+                    }
+                } else if (percentage >= 75) {
+                    alertElement.textContent = 'ℹ️ You\'ve used ' + percentage.toFixed(0) + '% of your budget.';
+                    alertElement.style.display = 'block';
+                    alertElement.className = 'budget-alert info';
+                    // Clear previous notifications when back to safe zone
+                    localStorage.removeItem('budgetWarningNotified');
+                    localStorage.removeItem('budgetExceededNotified');
                 } else {
                     alertElement.style.display = 'none';
+                    // Clear notifications when safe
+                    localStorage.removeItem('budgetWarningNotified');
+                    localStorage.removeItem('budgetExceededNotified');
                 }
             } else {
                 progressElement.style.width = '0%';
                 textElement.textContent = 'No budget set';
                 alertElement.style.display = 'none';
+                localStorage.removeItem('budgetWarningNotified');
+                localStorage.removeItem('budgetExceededNotified');
             }
         }
 
@@ -3233,6 +4257,15 @@
             document.getElementById('healthBudget').value = budgets.health || '';
             document.getElementById('educationBudget').value = budgets.education || '';
             document.getElementById('otherBudget').value = budgets.other || '';
+            
+            // Show current budget summary in modal header
+            const totalBudget = Object.values(budgets).reduce((sum, budget) => sum + budget, 0);
+            const modalTitle = document.querySelector('#budgetModal .modal-header h3');
+            if (totalBudget > 0) {
+                modalTitle.innerHTML = `<i class="fas fa-cog"></i> Budget Settings (Current: ₹${totalBudget.toLocaleString()})`;
+            } else {
+                modalTitle.innerHTML = `<i class="fas fa-cog"></i> Budget Settings`;
+            }
             
             document.getElementById('budgetModal').classList.add('active');
         }
@@ -3256,8 +4289,154 @@
             
             saveUserBudgets(currentUser, budgets);
             updateBudgetUI();
+            
+            // Calculate total budget
+            const totalBudget = Object.values(budgets).reduce((sum, budget) => sum + budget, 0);
+            
+            // Show budget summary
+            const summary = `Monthly: ₹${budgets.monthly.toLocaleString()}, Total Categories: ₹${totalBudget.toLocaleString()}`;
+            showToast(`Budget saved! ${summary}`, 'success', 5000);
+            
             closeBudgetModal();
-            showToast('Budget settings saved!', 'success');
+        }
+
+        // ==================== FAMILY MANAGEMENT FUNCTIONS ====================
+        let familyMembers = [];
+        let familySettings = {};
+
+        function openFamilyModal() {
+            loadFamilyData();
+            document.getElementById('familyModal').classList.add('active');
+        }
+
+        function closeFamilyModal() {
+            document.getElementById('familyModal').classList.remove('active');
+        }
+
+        function loadFamilyData() {
+            // Load family members and settings from localStorage
+            familyMembers = JSON.parse(localStorage.getItem(`familyMembers_${currentUser}`)) || [];
+            familySettings = JSON.parse(localStorage.getItem(`familySettings_${currentUser}`)) || {};
+
+            // Update UI
+            document.getElementById('familyMonthlyBudget').value = familySettings.monthlyBudget || '';
+            updateFamilyBudgetBreakdown();
+            renderFamilyMembers();
+            renderSharedExpenses();
+
+            // Add real-time update listener
+            document.getElementById('familyMonthlyBudget').addEventListener('input', updateFamilyBudgetBreakdown);
+        }
+
+        function renderFamilyMembers() {
+            const container = document.getElementById('familyMembersList');
+
+            // Keep the primary member
+            const primaryMember = container.querySelector('.family-member');
+            container.innerHTML = '';
+            container.appendChild(primaryMember);
+
+            // Add family members
+            familyMembers.forEach((member, index) => {
+                const memberDiv = document.createElement('div');
+                memberDiv.className = 'family-member';
+                memberDiv.innerHTML = `
+                    <div class="member-info">
+                        <div class="member-avatar">${member.name.charAt(0).toUpperCase()}</div>
+                        <div class="member-details">
+                            <h5>${member.name}</h5>
+                            <p>${member.relation}</p>
+                        </div>
+                    </div>
+                    <div class="member-stats">
+                        <span class="member-expenses">₹${(member.monthlyExpenses || 0).toLocaleString()}</span>
+                        <button class="btn btn-danger btn-sm" onclick="removeFamilyMember(${index})" style="margin-left: 8px;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(memberDiv);
+            });
+        }
+
+        function addFamilyMember() {
+            const name = prompt('Enter family member name:');
+            if (!name) return;
+
+            const relation = prompt('Enter relationship (e.g., Spouse, Child, Parent):');
+            if (!relation) return;
+
+            familyMembers.push({
+                name: name,
+                relation: relation,
+                monthlyExpenses: 0,
+                budget: 0
+            });
+
+            renderFamilyMembers();
+            updateFamilyBudgetBreakdown();
+        }
+
+        function removeFamilyMember(index) {
+            if (confirm('Are you sure you want to remove this family member?')) {
+                familyMembers.splice(index, 1);
+                renderFamilyMembers();
+                updateFamilyBudgetBreakdown();
+            }
+        }
+
+        function updateFamilyBudgetBreakdown() {
+            const familyBudget = parseFloat(document.getElementById('familyMonthlyBudget').value) || 0;
+            const individualBudgets = familyMembers.reduce((sum, member) => sum + (member.budget || 0), 0);
+
+            document.getElementById('individualBudgetsTotal').textContent = `₹${individualBudgets.toLocaleString()}`;
+            document.getElementById('sharedExpensesTotal').textContent = `₹${(familyBudget - individualBudgets).toLocaleString()}`;
+            document.getElementById('totalAllocated').textContent = `₹${familyBudget.toLocaleString()}`;
+        }
+
+        function renderSharedExpenses() {
+            const container = document.getElementById('sharedExpensesList');
+            const sharedExpenses = expenses.filter(e => e.isShared);
+
+            if (sharedExpenses.length === 0) {
+                container.innerHTML = '<p class="no-expenses">No shared expenses yet. Add some to track family spending.</p>';
+                return;
+            }
+
+            container.innerHTML = sharedExpenses.map(expense => `
+                <div class="expense-item">
+                    <div class="expense-category-icon ${expense.category}">
+                        <i class="fas ${getCategoryIcon(expense.category)}"></i>
+                    </div>
+                    <div class="expense-details">
+                        <h4>${getCategoryName(expense.category)}</h4>
+                        <p>${expense.description || 'Shared family expense'}</p>
+                        <div class="expense-meta">
+                            <span class="expense-date">${formatDate(expense.date)}</span>
+                        </div>
+                    </div>
+                    <div class="expense-amount">-${formatCurrency(expense.amount)}</div>
+                </div>
+            `).join('');
+        }
+
+        function addSharedExpense() {
+            // This would open the expense form with shared flag
+            showToast('Shared expense feature coming soon! For now, add expenses normally and mark them as shared.', 'info');
+        }
+
+        function saveFamilySettings() {
+            familySettings = {
+                monthlyBudget: parseFloat(document.getElementById('familyMonthlyBudget').value) || 0
+            };
+
+            // Save to localStorage
+            localStorage.setItem(`familyMembers_${currentUser}`, JSON.stringify(familyMembers));
+            localStorage.setItem(`familySettings_${currentUser}`, JSON.stringify(familySettings));
+
+            updateFamilyBudgetBreakdown();
+            showToast('Family settings saved successfully!', 'success');
+            closeFamilyModal();
         }
 
         // ==================== INSIGHTS FUNCTIONS ====================
@@ -3396,7 +4575,175 @@
             }, 700);
         }
 
+        // ==================== PAYMENT UPLOAD FUNCTIONS ====================
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) {
+                handleFile(file);
+            }
+        }
+
+        function handleFile(file) {
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                showToast('Please select a valid image file', 'error');
+                return;
+            }
+
+            // Validate file size (max 10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                showToast('File size must be less than 10MB', 'error');
+                return;
+            }
+
+            // Create file reader to display preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewImg.src = e.target.result;
+                uploadArea.style.display = 'none';
+                imagePreview.style.display = 'block';
+                showToast('Payment screenshot uploaded successfully!', 'success');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function removePaymentImage() {
+            previewImg.src = '';
+            imagePreview.style.display = 'none';
+            uploadArea.style.display = 'block';
+            paymentImageInput.value = '';
+            processingStatus.style.display = 'none';
+        }
+
+        function processPaymentImage() {
+            // Show processing status
+            processingStatus.style.display = 'block';
+            imagePreview.style.display = 'none';
+
+            // Simulate AI processing delay
+            setTimeout(() => {
+                // Mock AI categorization based on random scenarios
+                const mockResults = generateMockPaymentAnalysis();
+
+                // Hide processing status
+                processingStatus.style.display = 'none';
+                imagePreview.style.display = 'block';
+
+                // Auto-fill the form with recognized data
+                autoFillExpenseForm(mockResults);
+
+                showToast('Payment processed successfully! Form auto-filled.', 'success');
+            }, 3000); // 3 second processing simulation
+        }
+
+        function demoPaymentProcessing() {
+            // Show processing status
+            processingStatus.style.display = 'block';
+            uploadArea.style.display = 'none';
+            imagePreview.style.display = 'none';
+
+            showToast('Demo: Processing payment screenshot...', 'info');
+
+            // Simulate AI processing delay
+            setTimeout(() => {
+                // Mock AI categorization
+                const mockResults = generateMockPaymentAnalysis();
+
+                // Hide processing status
+                processingStatus.style.display = 'none';
+
+                // Show a demo image placeholder
+                previewImg.src = 'data:image/svg+xml;base64,' + btoa(`
+                    <svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="200" fill="#f3f4f6"/>
+                        <text x="200" y="60" text-anchor="middle" font-family="Arial" font-size="16" fill="#6b7280">Demo Payment Receipt</text>
+                        <text x="200" y="90" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">${mockResults.merchant}</text>
+                        <text x="200" y="120" text-anchor="middle" font-family="Arial" font-size="18" fill="#1f2937">₹${mockResults.amount}</text>
+                        <text x="200" y="150" text-anchor="middle" font-family="Arial" font-size="12" fill="#6b7280">AI Processed Successfully</text>
+                    </svg>
+                `);
+                imagePreview.style.display = 'block';
+
+                // Auto-fill the form with recognized data
+                autoFillExpenseForm(mockResults);
+
+                showToast('Demo: Payment processed! Form auto-filled with recognized data.', 'success');
+            }, 2500); // 2.5 second processing simulation
+        }
+
+        function generateMockPaymentAnalysis() {
+            // Mock AI analysis results - in a real app, this would use OCR and ML
+            const scenarios = [
+                {
+                    amount: Math.floor(Math.random() * 500) + 50,
+                    category: 'food',
+                    paymentMethod: 'upi',
+                    description: 'Restaurant payment via UPI',
+                    merchant: 'Swiggy/Zomato'
+                },
+                {
+                    amount: Math.floor(Math.random() * 200) + 20,
+                    category: 'shopping',
+                    paymentMethod: 'credit_card',
+                    description: 'Online shopping purchase',
+                    merchant: 'Amazon/Flipkart'
+                },
+                {
+                    amount: Math.floor(Math.random() * 1000) + 100,
+                    category: 'travel',
+                    paymentMethod: 'debit_card',
+                    description: 'Travel booking payment',
+                    merchant: 'MakeMyTrip/RedBus'
+                },
+                {
+                    amount: Math.floor(Math.random() * 300) + 50,
+                    category: 'entertainment',
+                    paymentMethod: 'upi',
+                    description: 'Movie tickets or streaming subscription',
+                    merchant: 'BookMyShow/Netflix'
+                },
+                {
+                    amount: Math.floor(Math.random() * 2000) + 500,
+                    category: 'bills',
+                    paymentMethod: 'bank_transfer',
+                    description: 'Utility bill payment',
+                    merchant: 'Electricity/Gas/Water'
+                }
+            ];
+
+            return scenarios[Math.floor(Math.random() * scenarios.length)];
+        }
+
+        function autoFillExpenseForm(paymentData) {
+            // Auto-fill the expense form with recognized data
+            document.getElementById('expenseAmount').value = paymentData.amount;
+            document.getElementById('expenseCategory').value = paymentData.category;
+            document.getElementById('expensePaymentMethod').value = paymentData.paymentMethod;
+            document.getElementById('expenseDate').valueAsDate = new Date();
+            document.getElementById('expenseDescription').value = paymentData.description;
+
+            // Highlight the auto-filled fields
+            const fields = ['expenseAmount', 'expenseCategory', 'expensePaymentMethod', 'expenseDescription'];
+            fields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                field.style.boxShadow = '0 0 0 2px rgba(34, 197, 94, 0.5)';
+                setTimeout(() => {
+                    field.style.boxShadow = '';
+                }, 2000);
+            });
+        }
+
         function exportData() {
+            const data = {
+                expenses,
+                incomes,
+                budgets,
+                exportDate: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
             const data = {
                 expenses,
                 incomes,
